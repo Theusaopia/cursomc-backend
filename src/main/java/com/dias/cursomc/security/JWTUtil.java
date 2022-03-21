@@ -39,7 +39,7 @@ public class JWTUtil {
 
 	private Claims getClaims(String token) {
 		try {
-			token = token.substring(6); //remover segundo bearer do token
+			//token = token.substring(6);
 			return Jwts.parser().setSigningKey(secret.getBytes()).parseClaimsJws(token).getBody();
 		} catch (Exception e) {
 			e.printStackTrace();
